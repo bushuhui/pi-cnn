@@ -14,24 +14,25 @@ This program is a C++ toolbox for extracting CNN feature map from image. For ach
 
 *1. build OpenBLAS*
 
-```cd ./Thirdparty/OpenBLAS
-tar xzf OpenBLAS-0.2.14.tar.gz
-make 
-sudo make install
+```
+ cd ./Thirdparty/OpenBLAS
+ tar xzf OpenBLAS-0.2.14.tar.gz
+ make 
+ sudo make install
 ```
 
 *2. build PIL*
 ```
-cd ./Thirdparty/PIL
-make
+ cd ./Thirdparty/PIL
+ make
 ```
 
 *3. build pi-cnn*
 ```
-cd cnn_models/
-wget http://www.adv-ci.com/download/pi-cnn/imagenet-vgg-f.cm 
-cd ..
-make
+ cd cnn_models/
+ wget http://www.adv-ci.com/download/pi-cnn/imagenet-vgg-f.cm 
+ cd ..
+ make
 ```
 
 
@@ -39,17 +40,17 @@ make
 ## Usage:
 
 ```
-# GPU calculation
-./test_CNN useGPU=1
+ # GPU calculation
+ ./test_CNN useGPU=1
 
-# CPU calculation
-./test_CNN useGPU=0
+ # CPU calculation
+ ./test_CNN useGPU=0
 
-# show feature maps
-./test_CNN act=showFeatureMap
+ # show feature maps
+ ./test_CNN act=showFeatureMap
 
-# match feature points
-./test_CNN act=matchWholeImage
+ # match feature points
+ ./test_CNN act=matchWholeImage
 ```
 
 ## Plateform:

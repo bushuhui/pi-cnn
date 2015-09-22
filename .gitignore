@@ -1,0 +1,6 @@
+*.o
+*.user*
+*~
+*.so
+*.cm
+test_CNN

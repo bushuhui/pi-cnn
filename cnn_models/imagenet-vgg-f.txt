@@ -1,0 +1,194 @@
+CNN model: imagenet-vgg-f
+
+layer [  1]:
+    type   : conv
+    name   : conv1
+    filters: [11  11   3  64 (single)]
+    biases : [1  64 (single)]
+    stride : 4  4
+    pad    : [0  0  0  0]
+    ----------------------------
+    input  : [224  224    3 (single)]
+    output : [54  54  64 (single)]
+
+layer [  2]:
+    type   : relu
+    name   : relu1
+    ----------------------------
+    input  : [54  54  64 (single)]
+    output : [54  54  64 (single)]
+
+layer [  3]:
+    type   : normalize
+    name   : norm1
+    param  : 5           2      0.0001        0.75
+    ----------------------------
+    input  : [54  54  64 (single)]
+    output : [54  54  64 (single)]
+
+layer [  4]:
+    type   : pool
+    name   : pool1
+    stride : 2  2
+    pad    : [0  1  0  1]
+    method : max
+    pool   : 3  3
+    ----------------------------
+    input  : [54  54  64 (single)]
+    output : [27  27  64 (single)]
+
+layer [  5]:
+    type   : conv
+    name   : conv2
+    filters: [5    5   64  256 (single)]
+    biases : [1  256 (single)]
+    stride : 1  1
+    pad    : [2  2  2  2]
+    ----------------------------
+    input  : [27  27  64 (single)]
+    output : [27   27  256 (single)]
+
+layer [  6]:
+    type   : relu
+    name   : relu2
+    ----------------------------
+    input  : [27   27  256 (single)]
+    output : [27   27  256 (single)]
+
+layer [  7]:
+    type   : normalize
+    name   : norm2
+    param  : 5           2      0.0001        0.75
+    ----------------------------
+    input  : [27   27  256 (single)]
+    output : [27   27  256 (single)]
+
+layer [  8]:
+    type   : pool
+    name   : pool2
+    stride : 2  2
+    pad    : [0  0  0  0]
+    method : max
+    pool   : 3  3
+    ----------------------------
+    input  : [27   27  256 (single)]
+    output : [13   13  256 (single)]
+
+layer [  9]:
+    type   : conv
+    name   : conv3
+    filters: [3    3  256  256 (single)]
+    biases : [1  256 (single)]
+    stride : 1  1
+    pad    : [1  1  1  1]
+    ----------------------------
+    input  : [13   13  256 (single)]
+    output : [13   13  256 (single)]
+
+layer [ 10]:
+    type   : relu
+    name   : relu3
+    ----------------------------
+    input  : [13   13  256 (single)]
+    output : [13   13  256 (single)]
+
+layer [ 11]:
+    type   : conv
+    name   : conv4
+    filters: [3    3  256  256 (single)]
+    biases : [1  256 (single)]
+    stride : 1  1
+    pad    : [1  1  1  1]
+    ----------------------------
+    input  : [13   13  256 (single)]
+    output : [13   13  256 (single)]
+
+layer [ 12]:
+    type   : relu
+    name   : relu4
+    ----------------------------
+    input  : [13   13  256 (single)]
+    output : [13   13  256 (single)]
+
+layer [ 13]:
+    type   : conv
+    name   : conv5
+    filters: [3    3  256  256 (single)]
+    biases : [1  256 (single)]
+    stride : 1  1
+    pad    : [1  1  1  1]
+    ----------------------------
+    input  : [13   13  256 (single)]
+    output : [13   13  256 (single)]
+
+layer [ 14]:
+    type   : relu
+    name   : relu5
+    ----------------------------
+    input  : [13   13  256 (single)]
+    output : [13   13  256 (single)]
+
+layer [ 15]:
+    type   : pool
+    name   : pool5
+    stride : 2  2
+    pad    : [0  0  0  0]
+    method : max
+    pool   : 3  3
+    ----------------------------
+    input  : [13   13  256 (single)]
+    output : [6    6  256 (single)]
+
+layer [ 16]:
+    type   : conv
+    name   : fc6
+    filters: [6     6   256  4096 (single)]
+    biases : [1  4096 (single)]
+    stride : 1  1
+    pad    : [0  0  0  0]
+    ----------------------------
+    input  : [6    6  256 (single)]
+    output : [1     1  4096 (single)]
+
+layer [ 17]:
+    type   : relu
+    name   : relu6
+    ----------------------------
+    input  : [1     1  4096 (single)]
+    output : [1     1  4096 (single)]
+
+layer [ 18]:
+    type   : conv
+    name   : fc7
+    filters: [1     1  4096  4096 (single)]
+    biases : [1  4096 (single)]
+    stride : 1  1
+    pad    : [0  0  0  0]
+    ----------------------------
+    input  : [1     1  4096 (single)]
+    output : [1     1  4096 (single)]
+
+layer [ 19]:
+    type   : relu
+    name   : relu7
+    ----------------------------
+    input  : [1     1  4096 (single)]
+    output : [1     1  4096 (single)]
+
+layer [ 20]:
+    type   : conv
+    name   : fc8
+    filters: [1     1  4096  1000 (single)]
+    biases : [1  1000 (single)]
+    stride : 1  1
+    pad    : [0  0  0  0]
+    ----------------------------
+    input  : [1     1  4096 (single)]
+    output : [1     1  1000 (single)]
+
+layer [ 21]:
+    type   : softmax
+    name   : prob
+    ----------------------------
+    input  : [1     1  1000 (single)]
+    output : [1     1  1000 (single)] 
